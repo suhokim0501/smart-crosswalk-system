@@ -1,0 +1,34 @@
+# Calibration coordinates were migrated from the original crosswalk_info.txt.
+# Paths are resolved relative to THIS file, not the terminal working directory.
+[paths]
+video = "../data/videos/test101_resized_4fps.mp4"
+detector = "../models/human_detect.pt"
+classifier = "../models/classify.pt"
+
+[crosswalk]
+green_time_s = 21.0
+decision_time_s = 10.0
+calibration_size = [1920, 1080]
+frame_size = [640, 360]
+size_cm = [800.0, 1400.0]
+pixel_points = [[1337, 902], [69, 667], [1357, 594], [669, 524], [1358, 559], [845, 493]]
+ground_points_cm = [[0, 1300], [800, 1300], [0, 584], [800, 623], [0, 344], [800, 106]]
+
+[tracking]
+stride = 1
+device = "cpu"
+tracker = "bytetrack.yaml"
+roi_cm = [-100.0, 600.0, 900.0, 1500.0]
+min_track_ratio = 0.2
+min_speed_cm_s = 1.0
+max_speed_cm_s = 120.0
+max_observation_age_s = 2.0
+
+[classification]
+samples_per_track = 10
+batch_size = 32
+# Raw checkpoint names are numeric; semantic names come from the original code.
+model_class_names = ["0", "1", "2", "3", "4"]
+class_names = ["crutches", "person", "walking frame", "walking stick", "wheelchair"]
+person_class_id = 1
+person_threshold = 0.9

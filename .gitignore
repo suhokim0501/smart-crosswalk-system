@@ -1,0 +1,29 @@
+# Local environments and build products
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+.env
+.env.*
+
+# Private/local model and video assets
+models/*
+!models/README.md
+data/videos/*
+!data/videos/README.md
+*.pt
+*.pth
+*.mp4
+*.avi
+*.mov
+*.onnx
+
+# Generated results and third-party tool settings
+outputs/
+runs/
+.ultralytics/

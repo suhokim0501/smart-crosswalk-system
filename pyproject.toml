@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart-crosswalk-system"
+version = "0.1.0"
+description = "Video-based pedestrian tracking and crossing-time estimation prototype"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.24,<3"]
+
+[project.optional-dependencies]
+vision = ["opencv-python>=4.8,<5", "ultralytics>=8.2,<9", "lap>=0.5.12,<1"]
+
+[project.scripts]
+smart-crosswalk = "smart_crosswalk.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
